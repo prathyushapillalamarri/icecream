@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IceCream Cone</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<!-- Google fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+	<style>
+	body {
+	background-image:url('http://cs.ucmo.edu/~pxp74880/4.jpg'); 
+	font-family: 'Sintony', sans-serif;
+	}
+	.container>img{
+		float:left;
+		margin-top: 50px;
+		margin-left: 390px;
+	}
+	.container{
+		background-color: #f5f5f0;
+	}
+	#floats-heading{
+		
+		margin-top: 50px;
+		/*float: left;*/
+		margin-left: 500px;
+	}
+	#page-heading{
+		
+		
+		
+		padding: 18px;
+		
+		margin: 0 -15px;
+		padding-left: 300px;
+
+		
+	}
+	#floats-heading:hover{
+		color:black;
+	}
+	label{
+		font-size: 20px;
+	}
+	#no-of-scoops{
+		margin-left: 80px;
+		margin-top: 50px;
+	}
+	#flavours{
+		margin-left: 80px;
+		margin-top: 20px;
+	}
+	#type-of-soda{
+		margin-left: 80px;
+		margin-top: 20px;
+		
+	}
+	#proceed-button,#pay-button{
+		padding: 10px 15px;
+		background-color: #63C6AE;
+		color: white;
+		text-transform: uppercase;
+		margin-left: 80px;
+		margin-top: 20px; 
+
+	}
+	#pay-button{
+		display: none;
+		text-decoration:none;
+	}
+	table {
+		width:16%;
+    margin-top: 10px;
+    margin-left: 80px;
+    display: none;
+
+	}
+	table, th, td {
+    	border: 1px solid #63C6AE;
+    	border-collapse: collapse;
+
+	}
+	th, td {
+    	padding: 5px;
+    	text-align: center;
+	}
+	table tr:nth-child(even) {
+    	background-color: #eee;
+	}
+	table tr:nth-child(odd) {
+   		background-color:#fff;
+	}
+	table th {
+    	background-color: #63C6AE;
+    	color: white;
+	}
+	#flavours-message{
+		
+		color: red;
+		margin-left: 285px;
+		
+	}
+	
+	</style>
+</head>
+
+<body>
+		<h1 id="page-heading">Pillalamarri's IceCream Store</h1>
+		<center><img src="http://cs.ucmo.edu/~pxp74880/3.jpg" class="img-rounded" width="240px" height="200px"></center>
+		<h2 id="floats-heading">Floats</h2>
+	
+	
+			<form>
+				<div  id="no-of-scoops">
+					<label>Number of Scoops: &nbsp; &nbsp;
+						<input type="number" id="scoops-number" name="noOfScoops" min="1" max="5">
+					</label>
+				</div>
+				<div id="flavours">
+					<label>Flavours: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						<input type="number" id="fc1" name="noOfFlavours" value="0" min="0" max="5">&nbsp; Vanilla &nbsp; &nbsp;
+						<input type="number" id="fc2" name="noOfFlavours" value="0" min="0" max="5">&nbsp; Chocolate &nbsp; &nbsp;
+						<input type="number" id="fc3" name="noOfFlavours" value="0" min="0" max="5">&nbsp; Strawberry &nbsp; &nbsp;
+						<input type="number" id="fc4" name="noOfFlavours" value="0" min="0" max="5">&nbsp; Blackforest &nbsp; &nbsp;
+						<input type="number" id="fc5" name="noOfFlavours" value="0" min="0" max="5">&nbsp; Galeto &nbsp; &nbsp;
+					</label><br>
+				</div>
+				<div id="flavours-message">
+					<!-- message -->
+				</div>
+				<div  id="type-of-soda">
+					<label>Type of Soda: &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;
+						<input type="radio" id="ts1" name="typeOfSoda" value="Watermelon" required="required">&nbsp; Watermelon &nbsp; &nbsp;
+						<input type="radio" id="ts2" name="typeOfSoda" value="Lemon">&nbsp; Lemon &nbsp; &nbsp;
+						<input type="radio" id="ts3" name="typeOfSoda" value="Ginger">&nbsp; Ginger &nbsp; &nbsp;
+					</label><br>
+				</div>
+				
+			</form>
+			<button class="btn" id="proceed-button">Proceed</button>
+
+			<table>
+  		<tr>
+    		<th></th>
+    		<th>Item</th>
+    		<th>Price</th>
+  		</tr>
+  		<tr>
+    		<td>Flavours</td>
+    		<td id="flavour-names"></td>
+    		<td id="flavour-price"></td>
+    		
+  		</tr>
+  		<tr>
+    		<td>Type of Soda</td>
+    		<td id="type-of-soda-table"></td>
+    		<td id="type-of-soda-price"></td>
+    		
+  		</tr>
+  		<tr>
+  			<td>Discount</td>
+  			<td>5%</td>
+  			<td id="discount-price"></td>
+  		</tr>
+  		<tr>
+    		<td></td>
+    		<td>Total</td>
+    		<td id="total-price"></td>
+  		</tr>
+  
+	</table>
+
+	<a href="thankyou.html"><button id="pay-button" class="btn">Proceed to pay</button></a>
+
+</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<script>
+		var noOfScoops=document.getElementById("no-of-scoops");
+		var typeOfSoda=document.getElementById("type-of-soda");
+		var flavours=document.getElementById("flavours");
+		var flavoursMessage=document.getElementById("flavours-message");
+		var flavourNames=document.getElementById("flavour-names");
+		var flavourPrice=document.getElementById("flavour-price");
+		var discountPrice=document.getElementById("discount-price");
+
+		var typeOfSodaTable=document.getElementById("type-of-soda-table");
+		var typeOfSodaPrice=document.getElementById("type-of-soda-price");
+
+		var tableName=document.getElementsByTagName("table");
+		var proceedButton=document.getElementById("proceed-button");
+		var floatsPrice=document.getElementById("total-price");
+
+		noOfScoops.addEventListener("click",scoopsFunc);
+		flavours.addEventListener("click",scoopsFunc);
+		typeOfSoda.addEventListener("click",sodaFunc);
+		proceedButton.addEventListener("click",submitFunc);
+		payButton=document.getElementById("pay-button");
+		var scoopsCount=0;
+		var flavourValue1=document.getElementById("fc1").value;
+		var flavourValue2=document.getElementById("fc2").value;
+		var flavourValue3=document.getElementById("fc3").value;
+		var flavourValue4=document.getElementById("fc4").value;
+		var flavourValue5=document.getElementById("fc5").value;
+
+		function scoopsFunc(){
+			scoopsCount=document.getElementById("scoops-number").value;
+			
+			sodaFunc();
+			
+		}
+		function sodaFunc(){
+			var flavourValue1=document.getElementById("fc1").value;
+			var flavourValue2=document.getElementById("fc2").value;
+			var flavourValue3=document.getElementById("fc3").value;
+			var flavourValue4=document.getElementById("fc4").value;
+			var flavourValue5=document.getElementById("fc5").value;
+
+			var flavourTotalValue=parseInt(flavourValue1)+parseInt(flavourValue2)+parseInt(flavourValue3)+parseInt(flavourValue4)+parseInt(flavourValue5);
+			flavourNames.innerHTML=flavourTotalValue.toString()+" Flavours";
+			var x=flavourTotalValue*10;
+			flavourPrice.innerHTML="$"+x;
+
+			if(flavourTotalValue!=scoopsCount){
+				
+				flavoursMessage.style.display="block";
+				flavoursMessage.innerHTML="** Number of Flavours must be equal to Number of Scoops";
+				for(var i = 0; i < tableName.length; i++) {
+  				tableName[i].style.display = "none";
+
+			}
+			payButton.style.display="none";
+
+			}
+			else{
+				flavoursMessage.style.display="none";
+			}
+			if(document.getElementById("ts1").checked){
+				typeOfSodaTable.innerHTML=document.getElementById("ts1").value;
+				typeOfSodaPrice.innerHTML="$"+10;
+				//alert(document.getElementById("ts1").value);
+			}
+			else if(document.getElementById("ts2").checked){
+				typeOfSodaTable.innerHTML=document.getElementById("ts2").value;
+				typeOfSodaPrice.innerHTML="$"+15;
+			
+			}
+			else if(document.getElementById("ts3").checked){
+				typeOfSodaTable.innerHTML=document.getElementById("ts3").value;
+				typeOfSodaPrice.innerHTML="$"+20;
+			
+			}
+
+			floatsPrice.innerHTML=parseInt(flavourPrice.innerHTML.substr(1))+parseInt(typeOfSodaPrice.innerHTML.substr(1));
+			var discount=floatsPrice.innerHTML*0.10;
+			discountPrice.innerHTML="$"+discount;
+			var finalPrice=floatsPrice.innerHTML-discount;
+			floatsPrice.innerHTML="$"+finalPrice;
+		}
+		function submitFunc(){
+			for(var i = 0; i < tableName.length; i++) {
+  				tableName[i].style.display = "block";
+  			}
+  			payButton.style.display="block";
+
+		}
+	</script>	
+			
+</body>
+</html>

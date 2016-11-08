@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IceCream Cone</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<!-- Google fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+	<style>
+	body {
+	
+background-image:url('http://cs.ucmo.edu/~pxp74880/4.jpg'); 
+	font-family: 'Sintony', sans-serif;
+	}
+	.container>img{
+		float:left;
+		margin-top: 50px;
+		margin-left: 390px;
+	}
+	.container{
+		background-color: #f5f5f0;
+	}
+	#icecream-heading{
+		
+		margin-top: 27px;
+		/*float: left;*/
+		margin-left: 445px;
+	}
+	#page-heading{
+		
+		
+		
+		padding: 18px;
+		
+		margin: 0 -15px;
+		padding-left: 300px;
+
+		
+	}
+	#icecream-heading:hover{
+		color:black;
+	}
+	#no-of-scoops{
+		margin-left: 80px;
+		margin-top: 50px;
+	}
+	#flavours,#serving-vessels,#proceed-button{
+		margin-left: 80px;
+		margin-top: 20px;
+	}
+	#proceed-button{
+		padding: 10px 15px;
+		background-color: #63C6AE;
+		color: white;
+		text-transform: uppercase; 
+	}
+	#pay-button{
+		display: none;
+
+		padding: 10px 15px;
+		background-color: #63C6AE;
+		color: white;
+		text-transform: uppercase;
+		margin-left: 80px;
+		margin-top: 20px;
+	}
+	label{
+		font-size: 20px;
+	}
+	#flavours-message{
+		display: none;
+		color: red;
+		margin-left: 300px;
+		margin-top: 20px;
+	}
+	
+
+	table {
+		width:19%;
+    margin-top: 10px;
+    margin-left: 80px;
+    display: none;
+
+	}
+	table, th, td {
+    	border: 1px solid #63C6AE;
+    	border-collapse: collapse;
+
+	}
+	th, td {
+    	padding: 5px;
+    	text-align: center;
+	}
+	table tr:nth-child(even) {
+    	background-color: #eee;
+	}
+	table tr:nth-child(odd) {
+   		background-color:#fff;
+	}
+	table th {
+    	background-color: #63C6AE;
+    	color: white;
+	}
+
+	
+	</style>
+
+
+</head>
+<body>
+
+	
+		<h1 id="page-heading">Pillalamarri's IceCream Store</h1>
+		<center><img src="http://cs.ucmo.edu/~pxp74880/ice-cream-cone-cupcakes-recipe-main.jpg" class="img-rounded" width="300px" heigth="300px">
+		</center><h2 id="icecream-heading">Ice Cream Cones</h2>
+
+		<div>
+			<form>
+			<div  id="no-of-scoops">
+			<label>Number of Scoops: &nbsp; &nbsp;
+			<input type="radio" id="ns1" name="noOfScoops" value="one scoop" required="required">&nbsp; One Scoop &nbsp; &nbsp;
+			<input type="radio" id="ns2" name="noOfScoops" value="two scoop">&nbsp; Two Scoop &nbsp; &nbsp;
+			</label><br>
+			</div>
+
+			<div  id="flavours">
+			<label>Flavours: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<input type="checkbox" class="flavour-class" name="flavours" value="Vanilla" required="required">&nbsp; Vanilla &nbsp; &nbsp;
+				<input type="checkbox" class="flavour-class" name="flavours" value="Chocolate">&nbsp; Chocolate &nbsp; &nbsp;
+				<input type="checkbox" class="flavour-class" name="flavours" value="Strawberry">&nbsp; Strawberry &nbsp; &nbsp;
+				<input type="checkbox" class="flavour-class" name="flavours" value="Blackforest">&nbsp; Blackforest &nbsp; &nbsp;
+				<input type="checkbox" class="flavour-class" name="flavours" value="Galeto">&nbsp; Galeto &nbsp; &nbsp;
+			</label><br>
+			</div>
+
+			<div id="flavours-message">
+			<!-- message -->
+			<p>** Number of scoops must be equal to the Number of flavours</p>
+			</div>
+
+			<div  id="serving-vessels">
+			<label>Serving Vessels: &nbsp; &nbsp; &nbsp;
+			<input type="radio" class="servingVessels" name="servingVessels" value="Waffle Cone" required="required">&nbsp; Waffle Cone &nbsp; &nbsp;
+			<input type="radio" class="servingVessels" name="servingVessels" value="Cup">&nbsp; Cup &nbsp; &nbsp;
+			</label><br>
+			</div>
+
+			
+			</form>
+			<button class="btn" id="proceed-button">Proceed</button>
+		</div>
+	<table>
+  		<tr>
+    		<th></th>
+    		<th>Item</th>
+    		<th>Price</th>
+  		</tr>
+  		<tr>
+    		<td>Flavours</td>
+    		<td id="flavour-names"></td>
+    		<td id="flavour-price"></td>
+    		
+  		</tr>
+  		<tr>
+    		<td>Serving Vessel</td>
+    		<td id="serving-vessel"></td>
+    		<td id="serving-vessel-price"></td>
+    		
+  		</tr>
+  		<tr>
+    		<td></td>
+    		<td>Total</td>
+    		<td id="total-price"></td>
+  		</tr>
+  
+	</table>
+
+	<a href="thankyou.html"><button id="pay-button" class="btn">Proceed to pay</button></a>	
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+<script>
+	console.log("22");
+	var x=0;
+	var numberOfScoops=document.getElementById("no-of-scoops")
+	var numberOfFlavours=document.getElementById("flavours");
+	var numberOfServingVessels=document.getElementById("serving-vessels");
+	var proceedButton=document.getElementById("proceed-button");
+	var flavoursMessage=document.getElementById("flavours-message");
+	var flavourNames=document.getElementById("flavour-names");
+	var flavourPrice=document.getElementById("flavour-price");
+	var tableName=document.getElementsByTagName("table");
+	var servingVessel=document.getElementById("serving-vessel");
+	var servingVesselPrice=document.getElementById("serving-vessel-price");
+	var iceCreamPrice=document.getElementById("total-price");
+	var payButton=document.getElementById("pay-button");
+	numberOfScoops.addEventListener("click",iceCreamConeFun1);
+	numberOfFlavours.addEventListener("click",checkBoxFunc1);
+	proceedButton.addEventListener("click",iceCreamBill);
+	numberOfServingVessels.addEventListener("click",servingVesselsFunc);
+	
+	function iceCreamConeFun1(){
+		if (document.getElementById("ns1").checked) {
+			
+			x=1;
+		}
+		if(document.getElementById("ns2").checked){
+			
+			x=2;
+		}
+		if(document.querySelectorAll('input[type="checkbox"]:checked').length!=0){
+			
+			checkBoxFunc1();
+		}
+	}
+
+	function checkBoxFunc1(){
+		
+		if(document.querySelectorAll('input[type="checkbox"]:checked').length!=x){
+			flavoursMessage.style.display="block";
+			// alert(document.querySelectorAll('input[type="checkbox"]:checked').length!=x);
+		}
+		else{
+			flavoursMessage.style.display="none";
+		}
+		
+	}
+
+	function servingVesselsFunc(){
+		servingVessel.innerHTML=document.querySelector('.servingVessels:checked').value;
+		if (servingVessel.innerHTML=="Waffle Cone") {
+			servingVesselPrice.innerHTML="$"+5;
+		}
+		else{
+			servingVesselPrice.innerHTML="$"+2;	
+		}
+	}
+	function iceCreamBill(){
+		// var value1=document.querySelector('.flavour-class:checked').value;
+		// alert(value1);
+		
+		// tableName.style.display="block";
+		if(flavoursMessage.style.display=="none"){
+			for(var i = 0; i < tableName.length; i++) {
+  				tableName[i].style.display = "block";
+
+		}
+			payButton.style.display="block";
+		
+
+		var checkedValue = ""; 
+		var inputElements = document.getElementsByClassName('flavour-class');
+		for(var i=0; inputElements[i]; ++i){
+      		if(inputElements[i].checked){
+           		checkedValue =checkedValue+"+"+inputElements[i].value;
+           	}
+		}
+		if(checkedValue[0]=='+'){
+			checkedValue=checkedValue.substr(1);
+		}
+
+		flavourNames.innerHTML=checkedValue;
+		var price=0;
+		var splitCheckedValue=checkedValue.split("+");
+		for(i=0;i<splitCheckedValue.length;i++){
+			if (splitCheckedValue[i]=="Vanilla") {
+				price=price+10;
+			}
+			else if(splitCheckedValue[i]=="Chocolate"){
+				price=price+10;
+			}
+			else if(splitCheckedValue[i]=="Strawberry"){
+				price=price+10;
+			}
+			else if(splitCheckedValue[i]=="Galeto"){
+				price=price+10;
+			}
+			else if(splitCheckedValue[i]=="Blackforest"){
+				price=price+10;
+			}
+		}
+		flavourPrice.innerHTML="$"+price;
+
+		var totalPrice=0;
+		totalPrice=parseInt(servingVesselPrice.innerHTML.substr(1))+parseInt(price);
+		iceCreamPrice.innerHTML="$"+totalPrice;
+	}
+	else{
+		flavoursMessage.style.display="block";
+	}
+	}
+
+	
+</script>
+
+
+
+</body>
+</html>
